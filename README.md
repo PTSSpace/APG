@@ -48,7 +48,7 @@ invoke docs-all
 
 ## License
 
-APS is licensed under the BSD 4-clause license, please see the LICENSE file.
+APG is licensed under the BSD 4-clause license, please see the LICENSE file.
 
 ## Copyright
 
