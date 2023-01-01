@@ -48,8 +48,8 @@ invoke docs-all
 
 ## License
 
-PTS license TBD.
+APS is licensed under the BSD 4-clause license, please see the LICENSE file.
 
 ## Copyright
 
-Copyright (c) Planetary Transportation Systems GmbH 2022. 
+Copyright (c) Planetary Transportation Systems GmbH 2023. 
