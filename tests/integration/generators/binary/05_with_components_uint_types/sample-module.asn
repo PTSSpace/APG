@@ -1,0 +1,24 @@
+Module-sample-module DEFINITIONS AUTOMATIC TAGS ::= BEGIN
+
+  Uint8-t ::= INTEGER(0..255)
+  Uint16-t ::= INTEGER(0..65535)
+  Uint32-t ::= INTEGER(0..4294967295)
+  Uint64-t ::= INTEGER(0..18446744073709551615)
+
+  Sample-packet ::= SEQUENCE {
+    sample-packet-with-component With-component-packet (WITH COMPONENTS { -- <BHIQ
+      with-component-packet-number-1 (23),
+      with-component-packet-number-2 (300),
+      with-component-packet-number-3 (66000),
+      with-component-packet-number-4 (4300000000)
+    })
+  }
+
+  With-component-packet ::= SEQUENCE {
+    with-component-packet-number-1 Uint8-t,
+    with-component-packet-number-2 Uint16-t,
+    with-component-packet-number-3 Uint32-t,
+    with-component-packet-number-4 Uint64-t
+  }
+
+END

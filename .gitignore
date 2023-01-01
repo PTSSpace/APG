@@ -1,0 +1,17 @@
+# Python
+__pycache__/
+
+# dev
+.idea/
+*.code-workspace
+
+# build folders
+docs/build
+docs/source/_static/gen
+
+# tests
+*.itest.script
+.venv/
+output/
+tests/integration/.lit_test_times.txt
+

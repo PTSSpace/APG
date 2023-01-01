@@ -1,0 +1,5 @@
+Module-imported-module DEFINITIONS AUTOMATIC TAGS ::= BEGIN
+
+  Number ::= INTEGER(0..7)
+
+END

@@ -1,0 +1,7 @@
+Module-module-a DEFINITIONS AUTOMATIC TAGS ::= BEGIN
+
+  IMPORTS Example-type FROM Module-module-b;
+
+  Example-type ::= BOOLEAN
+
+END

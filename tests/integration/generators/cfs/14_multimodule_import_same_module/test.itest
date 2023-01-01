@@ -1,0 +1,5 @@
+RUN: %asn1_parser generate-cfs %S/header.asn %S/module1.asn %S/module2.asn --asn1-modules=module1,module2,imported-module
+
+RUN: diff %S/expected/module1_msg.h %S/output/cfs/module1_msg.h
+RUN: diff %S/expected/module2_msg.h %S/output/cfs/module2_msg.h
+RUN: diff %S/expected/imported_module_msg.h %S/output/cfs/imported_module_msg.h

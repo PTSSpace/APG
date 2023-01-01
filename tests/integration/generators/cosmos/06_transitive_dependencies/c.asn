@@ -1,0 +1,13 @@
+Module-c-module DEFINITIONS AUTOMATIC TAGS ::= BEGIN
+
+  IMPORTS B-type FROM Module-b-module;
+
+  C-packet ::= SEQUENCE {
+    c-name B-type (WITH COMPONENTS {
+        b-name (WITH COMPONENTS {
+            a-name (0)
+        })
+    })
+  }
+
+END

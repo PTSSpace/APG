@@ -1,0 +1,7 @@
+Module-a-module DEFINITIONS AUTOMATIC TAGS ::= BEGIN
+
+  A-type ::= SEQUENCE {
+    a-name INTEGER(0..255)
+  }
+
+END

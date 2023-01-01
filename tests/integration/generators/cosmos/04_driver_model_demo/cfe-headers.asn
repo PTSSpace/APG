@@ -1,0 +1,27 @@
+Module-cfe-headers DEFINITIONS AUTOMATIC TAGS ::= BEGIN -- cFE TM/TC headers
+
+  IMPORTS Uint8-t, Uint16-t, Uint32-t FROM Module-simple-types
+          Ccsds-primary-header FROM Module-ccsds-headers;
+
+  Cfe-cmd-header ::= SEQUENCE {
+    primary Ccsds-primary-header,
+    secondary Cfe-tc-secondary-header
+  }
+
+  Cfe-tlm-header ::= SEQUENCE {
+    primary Ccsds-primary-header,
+    secondary Cfe-tm-secondary-header,
+    spare Uint32-t  -- Spares
+  }
+
+  Cfe-tc-secondary-header ::= SEQUENCE {
+    function-code Uint8-t,
+    checksum Uint8-t
+  }
+
+  Cfe-tm-secondary-header ::= SEQUENCE {
+    seconds Uint32-t, -- [sec]
+    subsecs Uint16-t -- unit: 2**-16 sec = 0.015 ms
+  }
+
+END

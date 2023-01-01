@@ -1,0 +1,7 @@
+Module-sample-module DEFINITIONS AUTOMATIC TAGS ::= BEGIN
+
+  Sample-packet ::= SEQUENCE {
+    number REAL(0.0 .. 1000.3)
+  }
+
+END

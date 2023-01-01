@@ -1,0 +1,5 @@
+RUN: %asn1_parser generate-cosmos %S/*.asn --asn1-module=gnc --asn1-messages=Gnc-data-tlm --output-file-name=gnc
+RUN: diff --color=always %S/expected/gnc.txt %S/output/cosmos/gnc.txt
+
+RUN: %asn1_parser generate-cosmos %S/*.asn --asn1-module=uart-driver --asn1-messages=Uart-driver-uart0-read-tlm,Uart-driver-uart1-read-tlm --output-file-name=uart_driver
+RUN: diff --color=always %S/expected/uart_driver.txt %S/output/cosmos/uart_driver.txt

@@ -1,0 +1,28 @@
+Module-sample-module DEFINITIONS AUTOMATIC TAGS ::= BEGIN
+
+  Sample-packet ::= SEQUENCE {
+    sample-packet-uint-number INTEGER(0..255),
+    sample-packet-with-component With-component-packet (WITH COMPONENTS {
+      with-component-packet-number-1 (23),
+      with-component-packet-number-2 (42),
+      with-component-packet-inner-with-component (WITH COMPONENTS {
+        inner-with-component-packet-number-1 (1),
+        inner-with-component-packet-number-2 (9)
+      }),
+      with-component-packet-bool (TRUE)
+    })
+  }
+
+  With-component-packet ::= SEQUENCE {
+    with-component-packet-number-1 INTEGER(0..4294967295),
+    with-component-packet-number-2 INTEGER(0..18446744073709551615),
+    with-component-packet-inner-with-component Inner-with-component-packet,
+    with-component-packet-bool BOOLEAN
+  }
+
+  Inner-with-component-packet ::= SEQUENCE {
+    inner-with-component-packet-number-1 INTEGER(0..255),
+    inner-with-component-packet-number-2 INTEGER(0..65535)
+  }
+
+END

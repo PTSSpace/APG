@@ -1,0 +1,8 @@
+RUN: %asn1_parser generate-binary %S/sample-module.asn --endianness=little-endian --asn1-modules=sample-module
+
+RUN: diff --color=always %S/expected/seq0.bin %S/output/binary/seq0.bin
+RUN: diff --color=always %S/expected/sample_module.h %S/output/binary/sample_module.h
+
+RUN: cp %S/main.c %S/output/binary/
+RUN: gcc %S/output/binary/main.c -o %S/output/binary/main
+RUN: %S/output/binary/main

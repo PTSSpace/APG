@@ -1,0 +1,14 @@
+Module-module2 DEFINITIONS AUTOMATIC TAGS ::= BEGIN
+
+  IMPORTS Imported-packet2 FROM Module-imported-module;
+
+  Packet2 ::= SEQUENCE {
+    import Imported-packet2
+    (WITH COMPONENTS {
+      imported-definition2 (WITH COMPONENTS {
+          variable (37)
+        })
+    })
+  }
+
+END

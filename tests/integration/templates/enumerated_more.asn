@@ -1,0 +1,16 @@
+Module-enumeration-test-more DEFINITIONS AUTOMATIC TAGS ::= BEGIN
+
+  Food-t ::= ENUMERATED {
+    carrot,     -- an carrot
+    apple,
+    banana
+  }
+
+  Hobbies-t ::= ENUMERATED {
+    diving,
+    swimming,
+    sleeping,
+    biking
+  }
+
+END

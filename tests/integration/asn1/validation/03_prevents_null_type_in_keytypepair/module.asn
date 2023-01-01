@@ -1,0 +1,7 @@
+Module-module DEFINITIONS AUTOMATIC TAGS ::= BEGIN
+
+  Cfe-cmd-header ::= SEQUENCE {
+    primary NULL
+  }
+
+END

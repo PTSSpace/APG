@@ -1,0 +1,8 @@
+RUN: %asn1_parser generate-cfs %S/ccsds-headers.asn %S/cfe-headers.asn \
+RUN: %S/module1.asn %S/module2.asn %S/simple-types.asn \
+RUN: --asn1-modules=module1,module2,simple-types,cfe-headers,ccsds-headers
+
+RUN: diff %S/expected/module1_msg.h %S/output/cfs/module1_msg.h
+RUN: diff %S/expected/module2_msg.h %S/output/cfs/module2_msg.h
+RUN: diff %S/expected/module1_msgids.h %S/output/cfs/module1_msgids.h
+RUN: diff %S/expected/module2_msgids.h %S/output/cfs/module2_msgids.h

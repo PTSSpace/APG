@@ -1,0 +1,7 @@
+Module-sample-module DEFINITIONS AUTOMATIC TAGS ::= BEGIN
+
+  Sample-packet ::= SEQUENCE {
+    number INTEGER(0..255)
+  }
+
+END

@@ -1,0 +1,24 @@
+Module-sample-module DEFINITIONS AUTOMATIC TAGS ::= BEGIN
+
+  Int8-t ::= INTEGER(-128..127)
+  Int16-t ::= INTEGER(-32768..32767)
+  Int32-t ::= INTEGER(-2147483648..2147483647)
+  Int64-t ::= INTEGER(-9223372036854775808..9223372036854775807)
+
+  Sample-packet ::= SEQUENCE {
+    sample-packet-with-component With-component-packet (WITH COMPONENTS { -- <bhiq
+      with-component-packet-number-1 (-127),
+      with-component-packet-number-2 (-130),
+      with-component-packet-number-3 (-40000),
+      with-component-packet-number-4 (-3000000000)
+    })
+  }
+
+  With-component-packet ::= SEQUENCE {
+    with-component-packet-number-1 Int8-t,
+    with-component-packet-number-2 Int16-t,
+    with-component-packet-number-3 Int32-t,
+    with-component-packet-number-4 Int64-t
+  }
+
+END

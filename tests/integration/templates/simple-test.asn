@@ -1,0 +1,24 @@
+Module-simple-test DEFINITIONS AUTOMATIC TAGS ::= BEGIN
+
+  Simple-choice-t ::= CHOICE {
+    sleep Sleep-time-t,
+    eat Food-t
+  }
+
+  Food-t ::= ENUMERATED {
+    carrot,
+    apple,
+    banana
+  }
+
+  Sleep-time-t ::= SEQUENCE {
+    begin Time-t,
+    end Time-t
+  }
+
+  Time-t ::= SEQUENCE {
+    hour INTEGER(0..23),     -- 24 h format
+    minute INTEGER(0..59)     -- 1 h == 60 min
+  }
+
+END

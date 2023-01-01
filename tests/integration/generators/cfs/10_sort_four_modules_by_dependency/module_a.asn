@@ -1,0 +1,9 @@
+Module-module-a DEFINITIONS AUTOMATIC TAGS ::= BEGIN
+
+  IMPORTS Module-b-type FROM Module-module-b;
+
+  Module-a-type ::= SEQUENCE {
+    module-a-variable Module-b-type
+  }
+
+END

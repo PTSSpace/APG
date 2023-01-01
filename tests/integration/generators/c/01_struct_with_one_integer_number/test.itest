@@ -1,0 +1,3 @@
+RUN: %asn1_parser generate-c %S/sample-module.asn --asn1-modules=sample-module
+
+RUN: diff --color=always %S/expected/sample_module.h %S/output/c/sample_module.h

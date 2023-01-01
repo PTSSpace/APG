@@ -1,0 +1,9 @@
+Module-test-module-ordered DEFINITIONS AUTOMATIC TAGS ::= BEGIN
+
+  Type11 ::= INTEGER(0..11)
+  Type12 ::= INTEGER(0..12)
+  Type13 ::= INTEGER(0..13)
+  Type14 ::= INTEGER(0..14)
+  Type15 ::= INTEGER(0..15)
+
+END

@@ -1,0 +1,6 @@
+RUN: %asn1_parser generate-cfs %S/sample.asn --asn1-modules=sample-module
+
+RUN: diff %S/expected/sample_module_msg.h %S/output/cfs/sample_module_msg.h
+
+RUN: cp %S/main.c %S/output/cfs/
+RUN: gcc -fsyntax-only %S/output/cfs/main.c

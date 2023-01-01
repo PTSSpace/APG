@@ -1,0 +1,14 @@
+Module-main-module DEFINITIONS AUTOMATIC TAGS ::= BEGIN
+
+  IMPORTS Imported-packet FROM Module-imported-module;
+
+  Packet ::= SEQUENCE {
+    import Imported-packet
+    (WITH COMPONENTS {
+      imported-definition (WITH COMPONENTS {
+          variable (7)
+        })
+    })
+  }
+
+END

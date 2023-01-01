@@ -1,0 +1,11 @@
+RUN: python3 main.py
+RUN: diff --color=always %S/expected/output_py %S/output/output_py
+
+RUN: gcc %S/main.c -o %S/output/main
+RUN: %S/output/main
+RUN: diff --color=always %S/expected/output_c %S/output/output_c
+
+RUN: python3 crossover.py
+
+RUN: gcc %S/crossover.c -o %S/output/crossover
+RUN: %S/output/crossover

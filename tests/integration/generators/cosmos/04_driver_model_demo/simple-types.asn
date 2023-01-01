@@ -1,0 +1,14 @@
+Module-simple-types DEFINITIONS AUTOMATIC TAGS ::= BEGIN
+
+  Real-range ::= REAL(-1.0e-40 .. +1.0e+40)
+
+  Uint3 ::= INTEGER(0..7)
+  Uint11 ::= INTEGER(0..2047)
+  Uint14 ::= INTEGER(0..16383)
+
+  Uint8-t ::= INTEGER(0..255)
+  Uint16-t ::= INTEGER(0..65535)
+  Uint32-t ::= INTEGER(0..4294967295)
+  Uint64-t ::= INTEGER(0..18446744073709551615)
+
+END

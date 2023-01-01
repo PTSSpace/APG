@@ -1,0 +1,6 @@
+RUN: (%asn1_parser generate-cfs \
+RUN: %S/module-a.asn %S/module-b.asn \
+RUN: --asn1-modules=module-a,module-b ; test $? = 1) \
+RUN: | filecheck %s --dump-input=fail
+
+CHECK: error: an issue occurred when validating the ASN.1 bundle: The type Example-type was already defined in module-a and module-b.

@@ -1,0 +1,7 @@
+Module-module DEFINITIONS AUTOMATIC TAGS ::= BEGIN
+
+  Example-type ::= INTEGER(0..7)
+
+  Example-type ::= BOOLEAN
+
+END

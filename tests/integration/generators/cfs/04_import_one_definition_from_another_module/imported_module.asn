@@ -1,0 +1,7 @@
+Module-imported-module DEFINITIONS AUTOMATIC TAGS ::= BEGIN
+
+  Imported-packet ::= SEQUENCE {
+    imported-definition INTEGER(0..7)
+  }
+
+END

@@ -1,0 +1,5 @@
+Module-module DEFINITIONS AUTOMATIC TAGS ::= BEGIN
+
+  Module-a-type ::= NULL
+
+END

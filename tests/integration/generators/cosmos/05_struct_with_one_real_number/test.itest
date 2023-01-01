@@ -1,0 +1,3 @@
+RUN: %asn1_parser generate-cosmos %S/sample.asn --asn1-module=sample-module --asn1-messages=Sample-packet --output-file-name=sample_module_msg
+
+RUN: diff %S/expected/sample_module_msg.txt %S/output/cosmos/sample_module_msg.txt

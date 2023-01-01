@@ -1,0 +1,19 @@
+RUN: %asn1_parser generate-cfs %S/module_a.asn %S/module_b.asn %S/module_c.asn %S/module_d.asn --asn1-modules=module-d,module-b,module-c,module-a
+
+RUN: diff %S/expected/module_a_msg.h %S/output/cfs/module_a_msg.h
+RUN: diff %S/expected/module_b_msg.h %S/output/cfs/module_b_msg.h
+RUN: diff %S/expected/module_c_msg.h %S/output/cfs/module_c_msg.h
+RUN: diff %S/expected/module_d_msg.h %S/output/cfs/module_d_msg.h
+
+RUN: cp %S/main.c %S/output/cfs/
+RUN: gcc -fsyntax-only %S/output/cfs/main.c
+
+RUN: %asn1_parser generate-cfs %S/module_a.asn %S/module_b.asn %S/module_c.asn %S/module_d.asn --asn1-modules=module-a,module-b,module-c,module-d
+
+RUN: diff %S/expected/module_a_msg.h %S/output/cfs/module_a_msg.h
+RUN: diff %S/expected/module_b_msg.h %S/output/cfs/module_b_msg.h
+RUN: diff %S/expected/module_c_msg.h %S/output/cfs/module_c_msg.h
+RUN: diff %S/expected/module_d_msg.h %S/output/cfs/module_d_msg.h
+
+RUN: cp %S/main.c %S/output/cfs/
+RUN: gcc -fsyntax-only %S/output/cfs/main.c

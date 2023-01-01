@@ -1,0 +1,9 @@
+Module-enumeration-test DEFINITIONS AUTOMATIC TAGS ::= BEGIN
+
+  Food-t ::= ENUMERATED {
+    carrot,     -- an carrot
+    apple,
+    banana
+  }
+
+END

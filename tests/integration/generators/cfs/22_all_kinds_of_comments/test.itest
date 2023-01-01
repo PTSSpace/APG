@@ -1,0 +1,5 @@
+RUN: %asn1_parser generate-cfs %S/test-module.asn %S/test-simple-types1.asn %S/test-simple-types2.asn --asn1-modules=test-module,test-simple-types1,test-simple-types2
+
+RUN: diff --color=always %S/expected/test_module_msg.h %S/output/cfs/test_module_msg.h
+RUN: diff --color=always %S/expected/test_simple_types1_msg.h %S/output/cfs/test_simple_types1_msg.h
+RUN: diff --color=always %S/expected/test_simple_types2_msg.h %S/output/cfs/test_simple_types2_msg.h

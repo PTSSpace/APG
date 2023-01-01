@@ -1,0 +1,5 @@
+Module-module-d DEFINITIONS AUTOMATIC TAGS ::= BEGIN
+
+  Module-d-type ::= INTEGER(0..65535)
+
+END

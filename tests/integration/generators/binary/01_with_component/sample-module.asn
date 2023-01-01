@@ -1,0 +1,15 @@
+Module-sample-module DEFINITIONS AUTOMATIC TAGS ::= BEGIN
+
+  Sample-packet ::= SEQUENCE {
+    sample-packet-with-component With-component-packet (WITH COMPONENTS { -- <IQ
+      with-component-packet-number-1 (23),
+      with-component-packet-number-2 (42)
+    })
+  }
+
+  With-component-packet ::= SEQUENCE {
+    with-component-packet-number-1 INTEGER(0..4294967295), -- 32 bit
+    with-component-packet-number-2 INTEGER(0..18446744073709551615) -- 64 bit
+  }
+
+END

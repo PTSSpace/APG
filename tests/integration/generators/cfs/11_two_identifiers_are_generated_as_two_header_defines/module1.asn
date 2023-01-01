@@ -1,0 +1,18 @@
+Module-module1 DEFINITIONS AUTOMATIC TAGS ::= BEGIN
+
+  IMPORTS Cfe-tlm-header FROM Module-cfe-headers;
+
+  Packet1 ::= SEQUENCE {
+    header Cfe-tlm-header (WITH COMPONENTS {
+      primary (WITH COMPONENTS {
+        packet-identification (WITH COMPONENTS {
+          packet-version-number (0),
+          packet-type-is-cmd (FALSE),
+          sec-hdr-flag-is-present (TRUE),
+          application-process-identifier (154)
+        })
+      })
+    })
+  }
+
+END

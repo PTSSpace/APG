@@ -1,0 +1,11 @@
+Module-imported-module DEFINITIONS AUTOMATIC TAGS ::= BEGIN
+
+  Imported-packet1 ::= SEQUENCE {
+    imported-definition1 INTEGER(0..7)
+  }
+
+  Imported-packet2 ::= SEQUENCE {
+    imported-definition2 INTEGER(0..2047)
+  }
+
+END

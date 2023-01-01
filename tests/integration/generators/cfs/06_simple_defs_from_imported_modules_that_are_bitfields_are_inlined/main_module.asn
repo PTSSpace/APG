@@ -1,0 +1,9 @@
+Module-main-module DEFINITIONS AUTOMATIC TAGS ::= BEGIN
+
+  IMPORTS Number FROM Module-imported-module;
+
+  Packet-main-packet ::= SEQUENCE {
+    number Number
+  }
+
+END

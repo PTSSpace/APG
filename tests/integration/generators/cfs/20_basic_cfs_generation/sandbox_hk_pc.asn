@@ -1,0 +1,33 @@
+Module-sandbox-hk-pc DEFINITIONS AUTOMATIC TAGS ::= BEGIN
+
+  IMPORTS Cfe-tlm-header FROM Module-cfe-headers
+          Uint64-t FROM Module-simple-types;
+
+  Percent-range ::= REAL(0.00 .. 100.00)
+  Load-range ::= REAL(0.00 .. 30.00)
+
+  Sandbox-hk-pc ::= SEQUENCE { -- (0x0899) SANDBOX PC housekeeping telemetry
+    header Cfe-tlm-header (WITH COMPONENTS {
+      primary (WITH COMPONENTS {
+        packet-identification (WITH COMPONENTS {
+          packet-version-number (0),
+          packet-type-is-cmd (FALSE),
+          sec-hdr-flag-is-present (TRUE),
+          application-process-identifier (153)
+        })
+      })
+    }),
+    payload Payload-sandbox-hk-pc
+  }
+
+  Payload-sandbox-hk-pc ::= SEQUENCE {
+    cpu Percent-range, -- [%] CPU usage
+    load1 Load-range, -- load from 1 minute average
+    load5 Load-range, -- load from 5 minutes average
+    load15 Load-range, -- load from 15 minutes average
+    total-ram Uint64-t, -- [byte] total RAM
+    free-ram Uint64-t, -- [byte] free RAM
+    free-swap Uint64-t -- [byte] free SWAP
+  }
+
+END

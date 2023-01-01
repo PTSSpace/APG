@@ -1,0 +1,30 @@
+Module-gnc DEFINITIONS AUTOMATIC TAGS ::= BEGIN
+
+  IMPORTS Cfe-tlm-header FROM Module-cfe-headers
+          Real-range FROM Module-simple-types;
+
+  Gnc-data-tlm ::= SEQUENCE { -- GNC_DATA_MID gnc_DataTlm_t (0x08A0)
+      header Cfe-tlm-header (WITH COMPONENTS {
+      primary (WITH COMPONENTS {
+        packet-version-number (0),
+        packet-identification (WITH COMPONENTS {
+          packet-type-is-cmd (FALSE),
+          sec-hdr-flag-is-present (TRUE),
+          application-process-identifier (160)
+        })
+      })
+    }),
+    payload Payload-gnc-data-tlm
+  }
+
+  Payload-gnc-data-tlm ::= SEQUENCE {
+    pos Real-range,   -- ENDIANNESS(LITTLE) [m]
+    vel Real-range,   -- ENDIANNESS(LITTLE) [m/s]
+    acc Real-range,   -- ENDIANNESS(LITTLE) [m/s^2]
+    p Real-range,     -- ENDIANNESS(LITTLE)
+    i Real-range,     -- ENDIANNESS(LITTLE)
+    d Real-range,     -- ENDIANNESS(LITTLE)
+    thrust Real-range -- ENDIANNESS(LITTLE) [N]
+  }
+
+END

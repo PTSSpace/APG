@@ -1,0 +1,21 @@
+RUN: %asn1_parser generate-cfs %S/choice.asn --asn1-modules=choice-test
+
+RUN: %asn1_parser generate-cfs %S/enumerated.asn --asn1-modules=enumeration-test
+
+RUN: %asn1_parser generate-cfs %S/enumerated_more.asn --asn1-modules=enumeration-test-more
+
+RUN: %asn1_parser generate-cfs %S/enumerated_value.asn --asn1-modules=enumeration-test-value
+
+RUN: %asn1_parser generate-cfs %S/sandbox.asn --asn1-modules=tmtc
+
+RUN: %asn1_parser generate-cfs %S/sandbox_hk_pc.asn %S/header.asn %S/simple_definitions.asn --asn1-modules=sandbox-hk-pc,tmtc-header,simple-types
+
+RUN: %asn1_parser generate-cfs %S/sequence.asn --asn1-modules=sequence-test
+
+RUN: %asn1_parser generate-cfs %S/simple-test.asn --asn1-modules=simple-test
+
+RUN: %asn1_parser generate-cfs %S/simple_values.asn --asn1-modules=simple-values
+
+RUN: %asn1_parser generate-cfs %S/single_component.asn --asn1-modules=single-component-test
+
+RUN: %asn1_parser generate-cfs %S/single_component_multi_types.asn --asn1-modules=single-component-multi-types-test

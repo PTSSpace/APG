@@ -1,0 +1,84 @@
+
+    digraph textX {
+    fontname = "Bitstream Vera Sans"
+    fontsize = 8
+    node[
+        shape=record,
+        style=filled,
+        fillcolor=aliceblue
+    ]
+    nodesep = 0.3
+    edge[dir=black,arrowtail=empty]
+
+
+25022648[ label="{Asn1|module_name: NameLower\l}"]
+
+24909880[ label="{ImportItem|definitions: List[NameCapital]\lmodule: NameLower\l}"]
+
+25214712[ label="{Asn1Comment|unit: STRING\lcomment: STRING\l}"]
+
+25253960[ label="{*Definitions|}"]
+
+25259496[ label="{Enumerated|type_name: NameCapital\l}"]
+
+25266152[ label="{EnumeratedItem|key: NameLower\lpos: INT\l}"]
+
+25271096[ label="{Asn1Type|type_name: OBJECT\lbegin: OBJECT\lend: OBJECT\l}"]
+
+25245832[ label="{KeyTypePair|key: NameLower\l}"]
+
+24771608[ label="{WithComponents|}"]
+
+25264152[ label="{ComponentsItem|key: NameLower\lvalue: OBJECT\l}"]
+
+25277816[ label="{Choice|type_name: NameCapital\l}"]
+
+25283352[ label="{Sequence|type_name: NameCapital\l}"]
+
+25288888[ label="{SimpleDefinition|type_name: NameCapital\l}"]
+
+
+
+25022648 -> 25214712[arrowtail=diamond, dir=both, headlabel="comment "]
+25022648 -> 24909880[arrowtail=diamond, dir=both, headlabel="import_items 1..*"]
+25022648 -> 25214712[arrowtail=diamond, dir=both, headlabel="comment_import "]
+25022648 -> 25253960[arrowtail=diamond, dir=both, headlabel="definitions 1..*"]
+24909880 -> 25214712[arrowtail=diamond, dir=both, headlabel="comment "]
+25253960 -> 25277816 [dir=back]
+25253960 -> 25259496 [dir=back]
+25253960 -> 25283352 [dir=back]
+25253960 -> 25288888 [dir=back]
+25259496 -> 25214712[arrowtail=diamond, dir=both, headlabel="comment "]
+25259496 -> 25266152[arrowtail=diamond, dir=both, headlabel="enum 1..*"]
+25266152 -> 25214712[arrowtail=diamond, dir=both, headlabel="comment "]
+25088632[ label="{*OBJECT|}"]
+
+25088632[ label="{*OBJECT|}"]
+
+25088632[ label="{*OBJECT|}"]
+
+25245832 -> 25271096[arrowtail=diamond, dir=both, headlabel="asn_type "]
+25245832 -> 25214712[arrowtail=diamond, dir=both, headlabel="comment "]
+25245832 -> 24771608[arrowtail=diamond, dir=both, headlabel="with_components "]
+24771608 -> 25214712[arrowtail=diamond, dir=both, headlabel="comment "]
+24771608 -> 25264152[arrowtail=diamond, dir=both, headlabel="components 1..*"]
+25088632[ label="{*OBJECT|}"]
+
+25264152 -> 25214712[arrowtail=diamond, dir=both, headlabel="comment "]
+25277816 -> 25214712[arrowtail=diamond, dir=both, headlabel="comment "]
+25277816 -> 25245832[arrowtail=diamond, dir=both, headlabel="choice 1..*"]
+25283352 -> 25214712[arrowtail=diamond, dir=both, headlabel="comment "]
+25283352 -> 25245832[arrowtail=diamond, dir=both, headlabel="seq 1..*"]
+25288888 -> 25271096[arrowtail=diamond, dir=both, headlabel="asn_type "]
+25288888 -> 25214712[arrowtail=diamond, dir=both, headlabel="comment "]
+match_rules [ shape=plaintext, label=< <table>
+	<tr>
+		<td><b>NameCapital</b></td><td>[A-Z][a-z\d]*(-[a-z\d]+)*</td>
+	</tr>
+	<tr>
+		<td><b>NameLower</b></td><td>[a-z][a-z\d]*(-[a-z\d]+)*</td>
+	</tr>
+</table> >]
+
+
+}

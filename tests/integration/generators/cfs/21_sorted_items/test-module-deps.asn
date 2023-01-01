@@ -1,0 +1,25 @@
+Module-test-module-deps DEFINITIONS AUTOMATIC TAGS ::= BEGIN
+
+  Test-seq-3 ::= SEQUENCE {
+    field1 Type-seq-21,
+    field2 Type-seq-22
+  }
+
+
+  Type-seq-21 ::= SEQUENCE {
+    field1 Type211,
+    field2 Type212
+  }
+
+  Type-seq-22 ::= SEQUENCE {
+    field1 Type221,
+    field2 Type222
+  }
+
+
+  Type211 ::= INTEGER(0..11)
+  Type212 ::= INTEGER(0..12)
+  Type221 ::= INTEGER(0..13)
+  Type222 ::= INTEGER(0..14)
+
+END

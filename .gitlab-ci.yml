@@ -1,0 +1,48 @@
+stages:
+  - setup
+  - lint
+  - test
+  - build
+
+# Setup
+
+setup_dependencies:
+  stage: setup
+  script:
+    - sudo apt install -q -y --no-install-recommends latexmk texlive-xetex texlive-fonts-recommended fonts-dejavu
+    - pip install -r requirements.txt
+
+# Lint
+
+lint_asn1_parser:
+  stage: lint
+  needs: [setup_dependencies]
+  script:
+    - invoke lint
+
+lint_docs:
+  stage: lint
+  needs: [setup_dependencies]
+  script:
+    - invoke docs-lint
+
+# Test
+
+test_ut_it:
+  stage: test
+  needs: [setup_dependencies]
+  script:
+    - invoke test
+
+# Build
+
+build_docs:
+  stage: build
+  needs: [setup_dependencies]
+  script:
+    - invoke docs-sphinx
+  artifacts:
+    name: ASN.1 Parser Documentation
+    expire_in: 4 weeks
+    paths:
+      - docs/build/latex/APG-Software-User-Manual.pdf

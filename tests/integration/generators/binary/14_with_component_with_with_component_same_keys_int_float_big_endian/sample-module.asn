@@ -1,0 +1,21 @@
+Module-sample-module DEFINITIONS AUTOMATIC TAGS ::= BEGIN
+
+  Seq0 ::= SEQUENCE {
+    value Seq1 (WITH COMPONENTS {  -- >Bf
+      my-value (3),
+      inner-with-component (WITH COMPONENTS {
+        my-value (3.14)
+      })
+    })
+  }
+  
+  Seq1 ::= SEQUENCE {
+    my-value INTEGER(0..255),
+    inner-with-component Seq2
+  }
+
+  Seq2 ::= SEQUENCE {
+    my-value REAL(0.0 .. 5.2)
+  }
+
+END

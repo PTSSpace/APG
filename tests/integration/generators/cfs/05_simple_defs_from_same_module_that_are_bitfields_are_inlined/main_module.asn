@@ -1,0 +1,9 @@
+Module-main-module DEFINITIONS AUTOMATIC TAGS ::= BEGIN
+
+  Number ::= INTEGER(0..7)
+
+  Packet-main-packet ::= SEQUENCE {
+    number Number
+  }
+
+END

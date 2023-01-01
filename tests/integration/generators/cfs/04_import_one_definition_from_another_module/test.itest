@@ -1,0 +1,5 @@
+RUN: %asn1_parser generate-cfs %S/imported_module.asn %S/main_module.asn --asn1-modules=main-module,imported-module
+
+RUN: diff --color=always %S/expected/main_module_msg.h %S/output/cfs/main_module_msg.h
+RUN: diff --color=always %S/expected/main_module_msgids.h %S/output/cfs/main_module_msgids.h
+RUN: diff --color=always %S/expected/imported_module_msg.h %S/output/cfs/imported_module_msg.h

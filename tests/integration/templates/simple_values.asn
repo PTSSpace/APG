@@ -1,0 +1,9 @@
+Module-simple-values DEFINITIONS AUTOMATIC TAGS ::= BEGIN
+
+  Uint16-t ::= INTEGER(0..65535)     -- 16 bit, 0x0000 to 0xFFFF
+  Uint32-t ::= INTEGER(0..4294967295)     -- 32 bit, 0x00000000 to 0xFFFFFFFF
+  Uint64-t ::= INTEGER(0..18446744073709551615)     -- 64 bit
+
+  Percent ::= REAL(0.00 .. 100.00)     -- [%] 0.00% to 100.00%
+
+END

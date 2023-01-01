@@ -1,0 +1,16 @@
+# dependencies
+cgen==2020.1
+filecheck==0.0.19
+invoke==1.5.0
+lit==13.0.0
+textX[cli]==2.3.0
+
+# dev tools
+black==21.4b0
+flake8==4.0.1
+pylint==2.11.1
+pytest==6.2.5
+mypy==0.931
+
+# documentation
+sphinx==3.2.1

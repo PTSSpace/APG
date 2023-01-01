@@ -1,0 +1,4 @@
+RUN: %asn1_parser generate-cfs %S/test-module-deps.asn %S/test-module-ordered.asn --asn1-modules=test-module-deps,test-module-ordered
+
+RUN: diff --color=always %S/expected/test_module_deps_msg.h %S/output/cfs/test_module_deps_msg.h
+RUN: diff --color=always %S/expected/test_module_ordered_msg.h %S/output/cfs/test_module_ordered_msg.h

@@ -1,0 +1,36 @@
+Module-tmtc-header DEFINITIONS AUTOMATIC TAGS ::= BEGIN -- CCSDS TM/TC header
+
+  IMPORTS Uint3, Uint11, Uint14, Uint16-t, Uint32-t, Uint64-t FROM Module-simple-types;
+
+  Ccsds-primary-header ::= SEQUENCE { -- primary header
+    packet-version-number Uint3,
+    packet-identification Packet-identification,
+    packet-sequence-control Packet-sequence-control,
+    packet-data-length Uint16-t -- length of the packet
+  }
+
+  Packet-identification ::= SEQUENCE {
+    packet-type-is-cmd BOOLEAN,
+    sec-hdr-flag-is-present BOOLEAN,
+    application-process-identifier Uint11
+  }
+
+  Packet-sequence-control ::= SEQUENCE {
+    sequence-flags Sequence-flag,
+    packet-sequence-count Uint14
+  }
+
+  Sequence-flag ::= ENUMERATED {
+    continuation-packet-in-sequence (0),
+    first-packet-in-sequence (1),
+    last-packet-in-sequence (2),
+    complete-packet(3)
+  }
+
+  Secondary-header ::= SEQUENCE {
+    seconds Uint32-t, -- [sec]
+    subsecs Uint16-t, -- [ms]
+    spare-2-align Uint32-t -- Spares
+  }
+  
+END

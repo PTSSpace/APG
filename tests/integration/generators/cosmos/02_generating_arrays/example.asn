@@ -1,0 +1,7 @@
+Module-example DEFINITIONS AUTOMATIC TAGS ::= BEGIN
+    Digits ::= INTEGER(0..9)
+
+    Example ::= SEQUENCE {
+        zip-code SEQUENCE (SIZE (5)) OF Digits
+    }
+END

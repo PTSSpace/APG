@@ -1,0 +1,8 @@
+RUN: (%asn1_parser generate-cfs \
+RUN: %S/module_a.asn \
+RUN: --asn1-modules=module-a,module-b ; test $? = 1) \
+RUN: | filecheck %s --dump-input=fail
+
+CHECK: error: an issue occurred when validating the ASN.1 bundle: Module module-b was found in the --asn1-modules command-line argument, but was not found in the bundle.
+CHECK: Modules found in command-line argument: module-a, module-b
+CHECK: Modules found in bundle               : module-a.

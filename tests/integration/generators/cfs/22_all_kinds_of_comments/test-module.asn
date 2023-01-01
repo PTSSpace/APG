@@ -1,0 +1,22 @@
+Module-test-module DEFINITIONS AUTOMATIC TAGS ::= BEGIN -- Module test-module comment
+
+  IMPORTS Simple-types-1-type1, Simple-types-1-type2 FROM Module-test-simple-types1 -- import comment ignored
+          Simple-types-2-type1, Simple-types-2-type2 FROM Module-test-simple-types2; -- import comment used
+
+  Test-module-test-seq ::= SEQUENCE { -- Test-seq comment
+    test-module-test-seq-1-field-1 Test-module-type-seq-1, -- testseq1 field1 comment
+    test-module-test-seq-1-field-2 Test-module-type-seq-2 -- testseq1 field2 comment
+  }
+
+
+  Test-module-type-seq-1 ::= SEQUENCE { -- Type-seq-1 comment
+    test-module-type-seq-1-field-1 Simple-types-1-type1, -- ts1 field1 comment
+    test-module-type-seq-1-field-2 Simple-types-1-type2 -- ts1 field2 comment
+  }
+
+  Test-module-type-seq-2 ::= SEQUENCE { -- Type-seq-2 comment
+    test-module-type-seq-2-field-1 Simple-types-2-type1, -- ts2 field1 comment
+    test-module-type-seq-2-field-2 Simple-types-2-type2 -- ts2 field2 comment
+  }
+
+END

@@ -1,0 +1,8 @@
+Module-choice-test DEFINITIONS AUTOMATIC TAGS ::= BEGIN
+
+  Simple-choice-t ::= CHOICE {
+    sleep BOOLEAN,     -- 1: yes, 0: no
+    eat INTEGER
+  }
+
+END

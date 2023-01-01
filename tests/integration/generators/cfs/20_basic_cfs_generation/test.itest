@@ -1,0 +1,10 @@
+RUN: %asn1_parser generate-cfs %S/ccsds-headers.asn %S/cfe-headers.asn %S/sandbox_hk_pc.asn %S/simple-types.asn --asn1-modules=ccsds-headers,cfe-headers,sandbox-hk-pc,simple-types
+
+RUN: diff --color=always %S/expected/ccsds_headers_msg.h %S/output/cfs/ccsds_headers_msg.h
+RUN: diff --color=always %S/expected/cfe_headers_msg.h %S/output/cfs/cfe_headers_msg.h
+RUN: diff --color=always %S/expected/sandbox_hk_pc_msg.h %S/output/cfs/sandbox_hk_pc_msg.h
+RUN: diff --color=always %S/expected/sandbox_hk_pc_msgids.h %S/output/cfs/sandbox_hk_pc_msgids.h
+RUN: diff --color=always %S/expected/simple_types_msg.h %S/output/cfs/simple_types_msg.h
+
+RUN: cp %S/main.c %S/output/cfs/
+RUN: gcc -fsyntax-only %S/output/cfs/main.c

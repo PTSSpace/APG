@@ -1,0 +1,6 @@
+Module-test-simple-types2 DEFINITIONS AUTOMATIC TAGS ::= BEGIN -- Module test-simple-types2 comment
+
+  Simple-types-2-type1 ::= INTEGER(0..13) -- int 0-13 comment
+  Simple-types-2-type2 ::= INTEGER(0..14) -- int 0-14 comment
+
+END

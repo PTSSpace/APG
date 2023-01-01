@@ -1,0 +1,7 @@
+RUN: (%asn1_parser generate-cfs \
+RUN: %S/module_a.asn %S/module_b.asn %S/module_b.asn \
+RUN: --asn1-modules=module-a,module-b; \
+RUN: test $? = 1) \
+RUN: | filecheck %s --dump-input=fail
+
+CHECK: error: an issue occurred when validating the ASN.1 bundle: The module module-b is found multiple times in the bundle.

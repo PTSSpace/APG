@@ -1,0 +1,13 @@
+Module-main-module DEFINITIONS AUTOMATIC TAGS ::= BEGIN
+
+  IMPORTS Percent, Float, Double, Uint3, Uint16-t FROM Module-imported-module;
+
+  Sample-packet ::= SEQUENCE {
+    number-0-100 Percent,
+    number-float Float,
+    number-double Double,
+    number-3-bit Uint3,
+    number-16-bit Uint16-t
+  }
+
+END
